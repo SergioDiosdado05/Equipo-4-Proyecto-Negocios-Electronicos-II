@@ -200,6 +200,7 @@ include("includes/header.php");
     include("includes/Footer.php");
 
     ?>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/20165766.js"></script> 
 <!-- Librerias de los folders jquery para que funcione-->
 <script src="js/jquery-331.min.js"></script>
 <script src="js/bootstrap-337.min.js"></script>
