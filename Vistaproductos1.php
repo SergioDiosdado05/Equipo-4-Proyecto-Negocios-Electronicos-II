@@ -1,138 +1,181 @@
 <?php
-include("modulos/productos.php");
+include("global/sesiones.php");
+include("global/conexion.php");
 include("cabecera.php"); ?>
 <!-- Left side column. contains the logo and sidebar -->
 <?php include ("sidebar.php"); ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
+<body>
 
-    <!-- Main content -->
-    <section class="content">
-      <!-- Formulario de Produtos-->
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Horizontal Form</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+<div class="content-wrapper">
+    <div class="row"><!--Inicio de row-->
 
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-lg-12"><!--Inicio de col-lg-12-->
+            <ol class="breadcrumb"><!--Inicio de breadcrumb-->
+                <li class="active"><!--Inicio de active-->
+                    <i class="fa fa-dashboard"></i> Tablero / Insertar Producto
+                </li><!--Final de active-->
+            </ol><!--Final de breadcrumb-->
+        </div><!--Final de col-lg-12-->
+    </div><!--Final de row-->
 
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Remember me
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Sign in</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- Fin Formulario Productos-->
-      <!-- Main row -->
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Responsive Hover Table</h3>
+    <!--Esto es para hacer el formulario en donde ingresaremos los datos-->
 
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+    <div class="row"><!--Inicio de row-->
+        <div class="col-lg-12"><!--Inicio de col-lg-12-->
+            <div class="panel panel-default"><!--Inicio de col-lg-12-->
+                <div class="panel-heading"><!--Inicio panel-heading-->
+                    <h3 class="panel-title"><!--panel-title-->
+                        <i class="fa fa-money fa-fw"></i> Insertar Producto<!--Inicio fa fa-money fa-fw-->
+                            <form action="" method="post" class="form-horizontal" enctype="multipart/form-data"><!--Inicio form-horizontal-->
+                                <div class="form-group">
+                                <label class="col-md-3 control-label">Titulo del Producto</label>
+                                <div class="col-md-6"><!--Inicio col-md-6-->
+                                    <input name="Producto_Titulo"type="text" class="form-control"  maxlength="40" required pattern="[A-Za-zÀ-ÿ0-9:\u00f1\u00d1 ]+" title="Solo se admiten letras" >
+                                </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Genero del Producto</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <select name="Producto_Genero" class="form-control"><!--Inicio form-control-->
+                                            <option >Selecciona el genero del Producto</option>
+                                            <?php
+                                            $get_p_genero="select * from Genero";
+                                            $run_p_genero = mysqli_query($con,$get_p_genero);
+                                            while($row_p_cats=mysqli_fetch_array($run_p_genero)){
+                                                $p_genero_id=$row_p_cats['GeneroId'];
+                                                $p_genero_titulo=$row_p_cats['GeneroTitulo'];
+                                                echo"                                       
+                                                <option value='$p_genero_id'> $p_genero_titulo</option>                                            
+                                                ";
+                                            }
+                                            ?>
+                                        </select><!--Final form-control-->
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Categorias</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <select name="Categoria" class="form-control"><!--Inicio form-control-->
+                                            <option >Selecciona la Categoria</option>
+                                            <?php
+                                            $get_cat="select * from Categoria";
+                                            $run_cat = mysqli_query($con,$get_cat);
+                                            while($row_cat=mysqli_fetch_array($run_cat)){
+                                                $categoria_id=$row_cat['CategoriaId'];
+                                                $categoria_titulo=$row_cat['CategoriaTitulo'];
+                                                echo"
+                                                <option value='$categoria_id'> $categoria_titulo</option>
+                                                ";
+                                            }
+                                            ?>
+                                        </select><!--Final form-control-->
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Imagen 1 del Producto</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <input name="ProductoImagenUno" type="file" class="form-control" required>
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Imagen 2 del Producto</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <input name="ProductoImagenDos" type="file" class="form-control" required>
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Imagen 3 del Producto</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <input name="ProductoImagenTres" type="file" class="form-control" required>
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Cantidad de Productos disponibles</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                            <select name="Producto_Cantidad" id="" class="form-control">
+                                                <option >1</option>
+                                            </select><!--Final select-->
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Precio del Producto</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
 
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <tbody><tr>
-                  <th>ID</th>
-                  <th>User</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                  <th>Reason</th>
-                </tr>
-                <tr>
-                  <td>183</td>
-                  <td>John Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                  <td>219</td>
-                  <td>Alexander Pierce</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-warning">Pending</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                  <td>657</td>
-                  <td>Bob Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-primary">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-                <tr>
-                  <td>175</td>
-                  <td>Mike Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-danger">Denied</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-              </tbody></table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-      </div>
-      <!-- /.row (main row) -->
+                                        <input name="Producto_Precio"type="number" class="form-control" min="1" required >
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  
-  <?php include ("piePagina.php"); ?>
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Palabras clave del Producto</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <input name="Producto_Palabra_Clave"type="text" pattern="[A-Za-zÀ-ÿ,\u00f1\u00d1 ]+" class="form-control" required>
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Descripción del Producto</label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <textarea name="Producto_Descripcion" cols="19" rows="6" class="form-control"></textarea>
+                                    </div><!--Final col-md-6-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"></label>
+                                    <div class="col-md-6"><!--Inicio col-md-6-->
+                                        <input name="submit" value="Insertar un Producto" type="submit" class="btn btn-primary form-control">
+                                    </div><!--Final col-md-6-->
+                                </div>
+                            </form><!--Final form-horizontal-->
+                    </h3><!--Final panel-title-->
+                </div><!--Final panel-heading-->
+            </div><!--Final de col-lg-12-->
+        </div><!--Final de col-lg-12-->
+    </div><!--Final de row-->
+
+    <script src="js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+</div>
+</body>
+</html>
+<!--Esto es para que el boton submit funcione-->
+
+<?php
+if(isset($_POST['submit'])){
+
+    $producto_titulo= $_POST['Producto_Titulo'];
+    $producto_genero= $_POST['Producto_Genero'];
+    $cat= $_POST['Categoria'];
+    $precio_producto= $_POST['Producto_Precio'];
+    $palabras_clave_producto= $_POST['Producto_Palabra_Clave'];
+    $descripcion_producto= $_POST['Producto_Descripcion'];
+    $cantidad_de_producto = $_POST['Producto_Cantidad'];
+
+    $producto_img1= $_FILES['ProductoImagenUno']['name'];
+    $producto_img2= $_FILES['ProductoImagenDos']['name'];
+    $producto_img3= $_FILES['ProductoImagenTres']['name'];
+
+    $temp_name1= $_FILES['ProductoImagenUno']['tmp_name'];
+    $temp_name2= $_FILES['ProductoImagenDos']['tmp_name'];
+    $temp_name3= $_FILES['ProductoImagenTres']['tmp_name'];
+
+    /*Esto es para mover las imagenes a la ruta que queramos*/
+
+    move_uploaded_file($temp_name1,"product_images/$producto_img1");
+    move_uploaded_file($temp_name2,"product_images/$producto_img2");
+    move_uploaded_file($temp_name3,"product_images/$producto_img3");
+
+$insert_producto = "INSERT INTO Producto(ProductoTitulo,ProductoImagenUno,ProductoImagenDos,ProductoImagenTres,ProductoPalabraClave,Date,ProductoDescripcion,GeneroId,CategoriaId,ProductoPrecio,ProductoCantidad) 
+VALUES ('$producto_titulo','$producto_img1','$producto_img2','$producto_img3','$palabras_clave_producto',NOW(),'$descripcion_producto','$producto_genero','$cat','$precio_producto','$cantidad_de_producto')";
+
+$run_product = mysqli_query($con,$insert_producto) or die($insert_producto);
+
+if($run_product) {
+    echo "<script>alert('El producto fue agregado satisafctoriamente')</script>";
+    echo "<script>window.open('Index.php?view_products','_self')</script>";
+}
+else {
+    echo "<script>alert('No se pudo')</script>";
+}
+
+}
+
+?>

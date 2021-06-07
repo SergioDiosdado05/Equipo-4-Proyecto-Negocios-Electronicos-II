@@ -44,7 +44,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -53,9 +53,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $cliente1['BitacoraId'];?></td>
                     <td><?php echo $cliente1['Fecha'];?></td>
                     <td><?php echo $cliente1['Ejecutor'];?></td>
-                    <td><?php echo $cliente1['Acción'];?></td>
-                    <td><?php echo $cliente1['InfActual'];?></td>
-                    <td><?php echo $cliente1['InfAnterior'];?></td>
+                    <td><span class="label label-success"><?php echo $cliente1['Actividad'];?></span></td>
+                    <td><?php echo $cliente1['infActual'];?></td>
+                    <td><?php echo $cliente1['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>
@@ -95,7 +95,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -104,9 +104,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $cliente2['BitacoraId'];?></td>
                     <td><?php echo $cliente2['Fecha'];?></td>
                     <td><?php echo $cliente2['Ejecutor'];?></td>
-                    <td><?php echo $cliente2['Acción'];?></td>
-                    <td><?php echo $cliente2['InfActual'];?></td>
-                    <td><?php echo $cliente2['InfAnterior'];?></td>
+                    <td><span class="label label-primary"><?php echo $cliente2['Actividad'];?></span></td>
+                    <td><?php echo $cliente2['infActual'];?></td>
+                    <td><?php echo $cliente2['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>
@@ -146,7 +146,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -155,9 +155,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $cliente3['BitacoraId'];?></td>
                     <td><?php echo $cliente3['Fecha'];?></td>
                     <td><?php echo $cliente3['Ejecutor'];?></td>
-                    <td><?php echo $cliente3['Acción'];?></td>
-                    <td><?php echo $cliente3['InfActual'];?></td>
-                    <td><?php echo $cliente3['InfAnterior'];?></td>
+                    <td><span class="label label-danger"><?php echo $cliente3['Actividad'];?></span></td>
+                    <td><?php echo $cliente3['infActual'];?></td>
+                    <td><?php echo $cliente3['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>

@@ -44,7 +44,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -53,9 +53,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $admin1['BitacoraId'];?></td>
                     <td><?php echo $admin1['Fecha'];?></td>
                     <td><?php echo $admin1['Ejecutor'];?></td>
-                    <td><?php echo $admin1['Acción'];?></td>
-                    <td><?php echo $admin1['InfActual'];?></td>
-                    <td><?php echo $admin1['InfAnterior'];?></td>
+                    <td><span class="label label-success"><?php echo $admin1['Actividad'];?></span></td>
+                    <td><?php echo $admin1['infActual'];?></td>
+                    <td><?php echo $admin1['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>
@@ -95,7 +95,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -104,9 +104,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $admin2['BitacoraId'];?></td>
                     <td><?php echo $admin2['Fecha'];?></td>
                     <td><?php echo $admin2['Ejecutor'];?></td>
-                    <td><?php echo $admin2['Acción'];?></td>
-                    <td><?php echo $admin2['InfActual'];?></td>
-                    <td><?php echo $admin2['InfAnterior'];?></td>
+                    <td><span class="label label-primary"><?php echo $admin2['Actividad'];?></span></td>
+                    <td><?php echo $admin2['infActual'];?></td>
+                    <td><?php echo $admin2['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>
@@ -146,7 +146,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -155,9 +155,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $admin3['BitacoraId'];?></td>
                     <td><?php echo $admin3['Fecha'];?></td>
                     <td><?php echo $admin3['Ejecutor'];?></td>
-                    <td><?php echo $admin3['Acción'];?></td>
-                    <td><?php echo $admin3['InfActual'];?></td>
-                    <td><?php echo $admin3['InfAnterior'];?></td>
+                    <td><span class="label label-danger"><?php echo $admin3['Actividad'];?></span></td>
+                    <td><?php echo $admin3['infActual'];?></td>
+                    <td><?php echo $admin3['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>

@@ -40,17 +40,15 @@
         </li>
         <!-- Productos -->
         <li class="treeview">
-          <a href="#">
+          <a href="">
             <i class="fa fa-dashboard"></i> <span>Productos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="Vistaproductos1.php"><i class="fa fa-circle-o"></i> Agregar</a></li>
-            <li><a href="Vistaproductos2.php"><i class="fa fa-circle-o"></i> Editar</a></li>
-            <li><a href="Vistaproductos3.php"><i class="fa fa-circle-o"></i> Eliminar</a></li>
-            <li><a href="Vistaproductos4.php"><i class="fa fa-circle-o"></i> Ver</a></li>
+            <li><a href="Vistaproductos1.php"><i class="fa fa-circle-o"></i> Agregar</a></li>
+            <li><a href="Ver_Productos.php"><i class="fa fa-circle-o"></i> Ver/Editar/Eliminar</a></li>
           </ul>
         </li>
         <!-- Ventas -->
@@ -75,6 +73,15 @@
             <li><a href="VistaBitacora2.php"><i class="fa fa-circle-o"></i> Administradores</a></li>
             <li><a href="VistaBitacora3.php"><i class="fa fa-circle-o"></i> Productos</a></li>
           </ul>
+        </li>
+        <!-- Estadisticas -->
+        <li>
+          <a href="Vistaestadisticas.php">
+            <i class="fa fa-dashboard"></i> <span>Estadisticas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
         </li>
       </ul>
 

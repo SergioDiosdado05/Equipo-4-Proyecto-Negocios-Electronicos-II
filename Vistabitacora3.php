@@ -44,7 +44,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -53,9 +53,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $product1['BitacoraId'];?></td>
                     <td><?php echo $product1['Fecha'];?></td>
                     <td><?php echo $product1['Ejecutor'];?></td>
-                    <td><?php echo $product1['Acción'];?></td>
-                    <td><?php echo $product1['InfActual'];?></td>
-                    <td><?php echo $product1['InfAnterior'];?></td>
+                    <td><span class="label label-success"><?php echo $product1['Actividad'];?></span></td>
+                    <td><?php echo $product1['infActual'];?></td>
+                    <td><?php echo $product1['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>
@@ -95,7 +95,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -104,9 +104,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $product2['BitacoraId'];?></td>
                     <td><?php echo $product2['Fecha'];?></td>
                     <td><?php echo $product2['Ejecutor'];?></td>
-                    <td><?php echo $product2['Acción'];?></td>
-                    <td><?php echo $product2['InfActual'];?></td>
-                    <td><?php echo $product2['InfAnterior'];?></td>
+                    <td><span class="label label-primary"><?php echo $product2['Actividad'];?></span></td>
+                    <td><?php echo $product2['infActual'];?></td>
+                    <td><?php echo $product2['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>
@@ -146,7 +146,7 @@ include("cabecera.php"); ?>
                   <th>ID</th>
                   <th>Fecha</th>
                   <th>Ejecutor</th>
-                  <th>Acción</th>
+                  <th>Actividad</th>
                   <th>infActual</th>
                   <th>infAnterior</th>
                 </tr>
@@ -155,9 +155,9 @@ include("cabecera.php"); ?>
                     <td><?php echo $product3['BitacoraId'];?></td>
                     <td><?php echo $product3['Fecha'];?></td>
                     <td><?php echo $product3['Ejecutor'];?></td>
-                    <td><?php echo $product3['Acción'];?></td>
-                    <td><?php echo $product3['InfActual'];?></td>
-                    <td><?php echo $product3['InfAnterior'];?></td>
+                    <td><span class="label label-danger"><?php echo $product3['Actividad'];?></span></td>
+                    <td><?php echo $product3['infActual'];?></td>
+                    <td><?php echo $product3['infAnterior'];?></td>
                   </tr>
                 <?php }?>
               </tbody></table>

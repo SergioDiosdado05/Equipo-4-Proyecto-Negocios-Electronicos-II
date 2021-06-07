@@ -46,6 +46,9 @@ include("cabecera.php"); ?>
                   <th>Categoria</th>
                   <th>Precio</th>
                   <th>Decripción</th>
+                  <th></th>
+                  <th></th>
+
                 </tr>
                 <?php foreach($listaproducto as $producto){ ?>
                   <tr>
@@ -54,6 +57,8 @@ include("cabecera.php"); ?>
                     <td><?php echo $producto['ProductoPalabraClave'];?></td>
                     <td><?php echo $producto['ProductoPrecio'];?></td>
                     <td><?php echo $producto['ProductoDescripcion'];?></td>
+                    <td><button type="button" class="btn btn-info">Editar</button></td>
+                    <td><button type="button" class="btn btn-danger">Eliminar</button></td>
                   </tr>
                 <?php }?>
               </tbody></table>
